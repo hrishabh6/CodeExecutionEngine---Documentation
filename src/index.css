@@ -4,6 +4,28 @@
 
 /* Dark Documentation Theme Design System */
 
+/* Add this to your global CSS file */
+* {
+    min-width: 0;
+}
+
+pre, code {
+    max-width: 100%;
+    overflow-x: auto;
+    word-wrap: break-word;
+}
+
+table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+
 @layer base {
     :root {
         /* Documentation Dark Theme */

@@ -6,10 +6,10 @@ import Usage from "@/components/content/Usage.tsx";
 import LanguageSupport from "@/components/content/LanguageSupport.tsx";
 import FutureScope from "@/components/content/FutureScope.tsx";
 import CustomDS from "@/components/content/CustomDS.tsx";
-
+// Mobile-responsive Documentation Content
 export const DocumentationContent = () => {
     return (
-        <div className="w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-12 lg:space-y-16 animate-fade-in">
+        <div className="w-full max-w-none lg:max-w-4xl lg:mx-auto space-y-8 sm:space-y-12 lg:space-y-16 px-4 sm:px-6 lg:px-8 animate-fade-in overflow-hidden">
             {/* Introduction */}
             <Introduction/>
 

@@ -1,13 +1,19 @@
 import { useState, useEffect } from "react";
 import { ChevronDown, ChevronRight } from "lucide-react";
-import { cn } from "@/lib/utils.ts";
+import { cn } from "@/lib/utils";
 import { navigationSections } from "@/lib/constants.ts";
+
 
 interface DocumentationSidebarProps {
     isOpen: boolean;
     onClose: () => void;
 }
 
+
+
+// Mobile-responsive Documentation Header
+
+// Mobile-responsive Documentation Sidebar
 export const DocumentationSidebar = ({ isOpen, onClose }: DocumentationSidebarProps) => {
     const [activeSection, setActiveSection] = useState<string>("introduction");
     const [expandedSections, setExpandedSections] = useState<Set<string>>(
@@ -67,39 +73,39 @@ export const DocumentationSidebar = ({ isOpen, onClose }: DocumentationSidebarPr
 
             {/* Sidebar */}
             <div className={cn(
-                "fixed left-0 top-14 sm:top-16 h-[calc(100vh-3.5rem)] sm:h-[calc(100vh-4rem)] w-full sm:w-80 bg-sidebar border-r border-sidebar-border z-50 transition-transform duration-300 ease-in-out lg:translate-x-0 lg:w-80",
+                "fixed left-0 top-14 sm:top-16 h-[calc(100vh-3.5rem)] sm:h-[calc(100vh-4rem)] w-72 sm:w-80 bg-sidebar border-r border-sidebar-border z-50 transition-transform duration-300 ease-in-out lg:translate-x-0",
                 isOpen ? "translate-x-0 animate-slide-in" : "-translate-x-full"
             )}>
-                <div className="p-4 sm:p-6 custom-scrollbar overflow-y-auto h-full">
-                    <div className="space-y-2">
+                <div className="p-3 sm:p-6 custom-scrollbar overflow-y-auto h-full">
+                    <div className="space-y-1 sm:space-y-2">
                         {navigationSections.map((section) => (
                             <div key={section.id} className="space-y-1">
                                 <button
                                     onClick={() => toggleSection(section.id)}
-                                    className="flex items-center justify-between w-full px-3 py-2 sm:py-2 text-sm font-medium text-sidebar-foreground hover:bg-sidebar-accent rounded-lg transition-colors touch-manipulation"
+                                    className="flex items-center justify-between w-full px-2 sm:px-3 py-2 text-xs sm:text-sm font-medium text-sidebar-foreground hover:bg-sidebar-accent rounded-md sm:rounded-lg transition-colors"
                                 >
-                                    <span className="text-left">{section.title}</span>
+                                    <span className="truncate">{section.title}</span>
                                     {expandedSections.has(section.id) ? (
-                                        <ChevronDown className="h-4 w-4 flex-shrink-0" />
+                                        <ChevronDown className="h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" />
                                     ) : (
-                                        <ChevronRight className="h-4 w-4 flex-shrink-0" />
+                                        <ChevronRight className="h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" />
                                     )}
                                 </button>
 
                                 {expandedSections.has(section.id) && (
-                                    <div className="pl-4 space-y-1 animate-fade-in">
+                                    <div className="pl-2 sm:pl-4 space-y-1 animate-fade-in">
                                         {section.items.map((item) => (
                                             <button
                                                 key={item.id}
                                                 onClick={() => scrollToSection(item.id)}
                                                 className={cn(
-                                                    "block w-full text-left px-3 py-2 sm:py-2 text-sm rounded-lg transition-all duration-200 touch-manipulation",
+                                                    "block w-full text-left px-2 sm:px-3 py-1.5 sm:py-2 text-xs sm:text-sm rounded-md sm:rounded-lg transition-all duration-200 truncate",
                                                     activeSection === item.id
                                                         ? "nav-active"
                                                         : "text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
                                                 )}
                                             >
-                                                <span className="block truncate">{item.title}</span>
+                                                {item.title}
                                             </button>
                                         ))}
                                     </div>
