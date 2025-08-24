@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { DocumentationHeader } from "@/components/DocumentationHeader";
-import { DocumentationSidebar } from "@/components/DocumentationSidebar";
-import { DocumentationContent } from "@/components/DocumentationContent";
+import {DocumentationHeader} from "@/components/DocumentationHeader.tsx";
+import {DocumentationContent} from "@/components/DocumentationContent.tsx";
+import {DocumentationSidebar} from "@/components/DocumentationSidebar.tsx";
 
 const Index = () => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
