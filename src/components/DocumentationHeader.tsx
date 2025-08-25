@@ -1,4 +1,4 @@
-import { Menu } from "lucide-react";
+import { Menu, Github, Twitter } from "lucide-react";
 import {Button} from "@/components/ui/button.tsx";
 
 interface DocumentationHeaderProps {
@@ -35,6 +35,29 @@ export const DocumentationHeader = ({ onMenuClick }: DocumentationHeaderProps) =
                 </div>
 
                 <div className="flex items-center space-x-2">
+                    {/* Social Media Buttons */}
+                    <div className="flex items-center space-x-1 sm:space-x-2">
+                        <Button
+                            variant="ghost"
+                            size="sm"
+                            className="p-1.5 sm:px-3 sm:py-2"
+                            onClick={() => window.open('https://github.com/hrishabh6/CodeExecutionEngine', '_blank')}
+                        >
+                            <Github className="h-4 w-4" />
+                            <span className="hidden lg:inline ml-2 text-xs">Visit GitHub</span>
+                        </Button>
+
+                        <Button
+                            variant="ghost"
+                            size="sm"
+                            className="p-1.5 sm:px-3 sm:py-2"
+                            onClick={() => window.open('https://x.com/Rishab093', '_blank')}
+                        >
+                            <Twitter className="h-4 w-4" />
+                            <span className="hidden lg:inline ml-2 text-xs">Follow on X</span>
+                        </Button>
+                    </div>
+
                     <div className="hidden sm:flex md:flex items-center text-xs sm:text-sm text-muted-foreground">
                         <span className="inline-flex items-center space-x-1">
                             <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-primary rounded-full animate-pulse"></span>
