@@ -50,8 +50,8 @@ const Installation = () => {
                                     language="xml"
                                     code={`<dependency>
     <groupId>xyz.hrishabhjoshi</groupId>
-    <artifactId>code-execution-engine</artifactId>
-    <version>1.0.0</version>
+    <artifactId>CodeExecutionEngine</artifactId>
+    <version>1.0.2</version>
 </dependency>
 
 <!-- Spring Boot dependencies (if not already included) -->
@@ -76,7 +76,8 @@ const Installation = () => {
                                     title="build.gradle"
                                     language="groovy"
                                     code={`dependencies {
-    implementation 'xyz.hrishabhjoshi:code-execution-engine:1.0.0'
+    implementation 'xyz.hrishabhjoshi:CodeExecutionEngine:1.0.2'
+
     
     // Spring Boot dependencies (if not already included)
     implementation 'org.springframework.boot:spring-boot-starter'
@@ -97,7 +98,8 @@ const Installation = () => {
                                         title="build.gradle.kts"
                                         language="kotlin"
                                         code={`dependencies {
-    implementation("xyz.hrishabhjoshi:code-execution-engine:1.0.0")
+    iimplementation("xyz.hrishabhjoshi:CodeExecutionEngine:1.0.2")
+
     
     // Spring Boot dependencies (if not already included)
     implementation("org.springframework.boot:spring-boot-starter")

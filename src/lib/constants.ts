@@ -36,8 +36,7 @@ export const navigationSections: NavSection[] = [
         id: "advanced-features",
         items: [
             { title: "Custom Data Structures", id: "custom-data-structures" },
-            { title: "Security & Sandboxing", id: "security" },
-            { title: "Output Validation", id: "output-validation" }
+
         ]
     },
 
